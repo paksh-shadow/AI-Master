@@ -6,7 +6,7 @@ if (typeof document !== "undefined") {
   document.title = "AI MASTER - AI Blog";
 }
 
-const catStyle = {
+const catStyle: Record<string, { accent: string; bg: string }> = {
   "AI Tools":   { accent: "#f97316", bg: "rgba(249,115,22,0.12)" },
   Tutorials:    { accent: "#22d3ee", bg: "rgba(34,211,238,0.12)" },
   "Deep Dive":  { accent: "#a78bfa", bg: "rgba(167,139,250,0.12)" },
@@ -16,10 +16,15 @@ const catStyle = {
 };
 
 const NAV_LINKS = ["Home", "Blogs", "About Us", "Contact"];
-const NAV_PATHS = { "Home": "/", "Blogs": "/blog", "About Us": "/about", "Contact": "/contact" };
+const NAV_PATHS: Record<string, string> = {
+  "Home": "/",
+  "Blogs": "/blog",
+  "About Us": "/about",
+  "Contact": "/contact",
+};
 const categories = ["All", "AI Tools", "Tutorials", "Deep Dive", "Education", "Productivity", "Industry"];
 
-function formatContent(content) {
+function formatContent(content: string) {
   return content.split("\n\n").map((p, i) => {
     const bold = p.match(/^\*\*(.+?)\*\*/);
     if (bold) {
@@ -39,7 +44,7 @@ function formatContent(content) {
   });
 }
 
-function Navbar({ onHome }) {
+function Navbar({ onHome }: { onHome: () => void }) {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <nav style={{ background: "rgba(5,7,15,0.97)", borderBottom: "1px solid rgba(249,115,22,0.18)", backdropFilter: "blur(16px)", position: "sticky", top: 0, zIndex: 100 }}>
@@ -110,11 +115,10 @@ function Footer() {
 }
 
 export default function BlogSite() {
-  const [posts, setPosts] = useState([]);
-  const [activePost, setActivePost] = useState(null);
+  const [posts, setPosts] = useState<any[]>([]);
+  const [activePost, setActivePost] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState("All");
 
-  // Fetch posts from API route
   useEffect(() => {
     fetch("/api/posts")
       .then(r => r.json())
