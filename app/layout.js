@@ -3,14 +3,15 @@ import { Analytics } from '@vercel/analytics/react';
 export const metadata = {
   title: "AI MASTER - AI Blog",
   description: "Best AI tools, tutorials, and AI earning guides",
-  verification: {
-    google: "n5mvpFVWwTDSVwOa1opgQ9f6yqtp4sCKYbhmUweGgpQ",
-  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Search Console Verification */}
+        <meta name="google-site-verification" content="n5mvpFVWwTDSVwOa1opgQ9f6yqtp4sCKYbhmUweGgpQ" />
+      </head>
       <body>
         {children}
         <Analytics />
