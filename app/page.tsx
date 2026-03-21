@@ -134,10 +134,11 @@ export default function BlogSite() {
     if (!post) return null;
     const cs = catStyle[post.category] || { accent: "#f97316", bg: "rgba(249,115,22,0.1)" };
     return (
-      <div style={{ minHeight: "100vh", background: "#05070f", color: "#fff" }}>
+      <div style={{ minHeight: "100vh", background: "#05070f", color: "#fff", width: "100%", overflowX: "hidden" }}>
         <style>{`
           @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@400;500;600&display=swap');
           * { box-sizing: border-box; }
+          html, body { overflow-x: hidden !important; background: #05070f !important; margin: 0; padding: 0; }
           .back-btn:hover { background: rgba(249,115,22,0.2) !important; color: #fff !important; }
           @media (max-width: 768px) { .mobile-nav-links { display: none !important; } .hamburger-btn { display: flex !important; } .article-padding { padding: 2rem 1.1rem 2rem !important; } }
         `}</style>
@@ -168,10 +169,11 @@ export default function BlogSite() {
   }
 
   return (
-    <div style={{ minHeight: "100vh", background: "#05070f", color: "#fff" }}>
+    <div style={{ minHeight: "100vh", background: "#05070f", color: "#fff", width: "100%", overflowX: "hidden" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@400;500;600&display=swap');
         * { box-sizing: border-box; }
+        html, body { overflow-x: hidden !important; background: #05070f !important; margin: 0; padding: 0; }
         .pcard { transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s !important; cursor: pointer; }
         .pcard:hover { transform: translateY(-6px) !important; border-color: rgba(249,115,22,0.35) !important; box-shadow: 0 20px 60px rgba(249,115,22,0.1) !important; }
         .cpill { transition: all 0.18s; cursor: pointer; border: none; outline: none; }
