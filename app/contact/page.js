@@ -364,7 +364,7 @@ export default function ContactPage() {
             <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1rem", color: "#fff" }}>AI MASTER</span>
           </Link>
           <p style={{ color: "#334155", fontSize: "0.8rem" }}>
-            © 2025 AI MASTER. All rights reserved. · Built with ⚡ & AI
+            ©  AI MASTER. All rights reserved. ·
           </p>
         </footer>
 
