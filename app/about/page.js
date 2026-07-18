@@ -350,7 +350,7 @@ export default function AboutPage() {
             <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1rem", color: "#fff" }}>AI MASTER</span>
           </Link>
           <p style={{ color: "#334155", fontSize: "0.8rem" }}>
-            AI MASTER. All rights reserved. · 
+               AI MASTER. All rights reserved. · 
           </p>
         </footer>
 
