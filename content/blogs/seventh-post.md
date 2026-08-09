@@ -1,6 +1,6 @@
 ---
 title: "OpenAI IPO Kya Hai? Aam Aadmi Ko Kya Farak Padega — Poori Jaankari"
-category: "Industry News"
+category: "Industry"
 date: "2026-08-09"
 readTime: "8 min"
 author: "Naresh Bhardwaj"
