@@ -1,4 +1,4 @@
-import { getAllPosts } from "@/lib/..."
+import { getAllPosts } from "@/lib/posts";
 
 export default function sitemap() {
   const posts = getAllPosts();
@@ -9,11 +9,11 @@ export default function sitemap() {
   }));
 
   return [
-    { url: "https://www.aimasterblog.in" },
-    { url: "https://www.aimasterblog.in/blog" },
-    { url: "https://www.aimasterblog.in/ai-tools" },
-    { url: "https://www.aimasterblog.in/about" },
-    { url: "https://www.aimasterblog.in/contact" },
+    { url: "https://www.aimasterblog.in", lastModified: new Date() },
+    { url: "https://www.aimasterblog.in/blog", lastModified: new Date() },
+    { url: "https://www.aimasterblog.in/ai-tools", lastModified: new Date() },
+    { url: "https://www.aimasterblog.in/about", lastModified: new Date() },
+    { url: "https://www.aimasterblog.in/contact", lastModified: new Date() },
     ...blogPosts,
   ];
 }
