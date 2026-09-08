@@ -10,8 +10,27 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <meta name="google-site-verification" content="n5mvpFVWwTDSVwOa1opgQ9f6yqtp4sCKYbhmUweGgpQ" />
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-Y9XB5WXDL2" strategy="afterInteractive" />
+
+        {/* Google Search Console Verification */}
+        <meta
+          name="google-site-verification"
+          content="n5mvpFVWwTDSVwOa1opgQ9f6yqtp4sCKYbhmUweGgpQ"
+        />
+
+        {/* Google AdSense */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9687541571045033"
+          crossOrigin="anonymous"
+        />
+
+        {/* Google Analytics */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-Y9XB5WXDL2"
+          strategy="afterInteractive"
+        />
+
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -20,7 +39,9 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-Y9XB5WXDL2');
           `}
         </Script>
+
       </head>
+
       <body>
         {children}
         <Analytics />
