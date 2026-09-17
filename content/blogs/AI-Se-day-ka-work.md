@@ -57,7 +57,7 @@ Weekly report ho, sales summary ho, ya meeting minutes — inme likhna sabse zya
 
 Raw data ya rough notes AI ko de do, format bata do — bullet points chahiye ya paragraph, kitna detail chahiye — aur AI pehla draft bana dega. Aapka kaam sirf facts verify karna aur zaroorat ke hisaab se polish karna reh jaata hai.
 
-Jo kaam pehle 1.5-2 ghante leta tha, ab genuinely 20-30 minute mein ho jaata hai — bina quality kam kiye.
+Jo kaam pehle 1.5 se 2 ghante leta tha, ab genuinely 20 se 30 minute mein ho jaata hai — bina quality kam kiye.
 
 Time bacha: 1 se 1.5 ghanta
 
@@ -89,10 +89,15 @@ Ek typical office day kaisa dikh sakta hai, agar aap in steps ko follow karein:
  Kaam / Purana Time / AI Ke Saath 
 
  Din plan karna / 45 min / 10 min 
+
  Emails / messages / 2 hrs / 30 min 
+
  Weekly report / 1.5 hrs / 25 min 
+
  Presentation outline / 1 hr / 20 min 
+
  Excel / data ka kaam / 1 hr / 20 min 
+
  Total / 6.25 hrs/ 1.75 hrs 
 
 Baaki bacha hua time — sochne wale, creative, aur decision-making kaam mein lagta hai, jahan asli value add hoti hai aur AI seedha kaam nahi aa sakta.
