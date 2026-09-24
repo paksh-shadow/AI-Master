@@ -595,7 +595,7 @@ A digital twin is a digital representation of a physical machine, process or sys
 
 Common challenges include poor-quality data, legacy equipment, integration problems, cost, cybersecurity, workforce skills and the need to validate AI systems before relying on their recommendations.
 
----
+
 
 ## Sources
 
