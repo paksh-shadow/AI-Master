@@ -301,7 +301,7 @@ export default function ContactPage() {
                 {
                   icon: "📧",
                   title: "Email Us",
-                  value: "contact@aimaster.dev",
+                  value: "shadowpaksh@gmail.com",
                   sub: "We reply within 24 hours",
                   accent: "#f97316",
                   bg: "rgba(249,115,22,0.1)"
@@ -309,7 +309,7 @@ export default function ContactPage() {
                 {
                   icon: "✍️",
                   title: "Write for Us",
-                  value: "guest@aimaster.dev",
+                  value: "shadowpaksh@gmail.com",
                   sub: "Submit a guest post or article idea",
                   accent: "#22d3ee",
                   bg: "rgba(34,211,238,0.1)"
@@ -317,7 +317,7 @@ export default function ContactPage() {
                 {
                   icon: "🤝",
                   title: "Collaborations",
-                  value: "partner@aimaster.dev",
+                  value: "shadowpaksh@gmail.com",
                   sub: "Brand deals, sponsorships & partnerships",
                   accent: "#a78bfa",
                   bg: "rgba(167,139,250,0.1)"
