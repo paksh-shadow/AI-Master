@@ -1,13 +1,47 @@
+"use client";
 // app/contact/page.jsx
 
-export const metadata = {
-  title: "Contact Us — AI MASTER",
-  description: "Get in touch with the AI MASTER team. We'd love to hear from you.",
-};
-
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
+const FORM_URL = "https://formspree.io/f/mppwrgjn";
+
+const labelStyle = {
+  display: "block",
+  fontFamily: "'Syne', sans-serif",
+  fontSize: "0.8rem",
+  fontWeight: 700,
+  color: "#94a3b8",
+  marginBottom: "0.5rem",
+  letterSpacing: "0.05em",
+  textTransform: "uppercase",
+};
+
 export default function ContactPage() {
+  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
+
+  useEffect(() => {
+    document.title = "Contact Us — AI MASTER";
+  }, []);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    setStatus("sending");
+    try {
+      const res = await fetch(FORM_URL, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      if (!res.ok) throw new Error("failed");
+      form.reset();
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
+  }
+
   return (
     <>
       <style>{`
@@ -183,76 +217,80 @@ export default function ContactPage() {
                 Fill in the form and we'll respond within 24 hours.
               </p>
 
-              {/* NOTE: For real form submission, connect to Formspree, EmailJS, or a Next.js API route */}
-              <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
-                style={{ display: "flex", flexDirection: "column", gap: "1.1rem" }}>
-
-                {/* Name */}
-                <div>
-                  <label style={{ display: "block", fontFamily: "'Syne', sans-serif", fontSize: "0.8rem", fontWeight: 700, color: "#94a3b8", marginBottom: "0.5rem", letterSpacing: "0.05em", textTransform: "uppercase" }}>
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Naresh Bhardwaj"
-                    required
-                    className="contact-input"
-                  />
+              {status === "sent" ? (
+                <div style={{ padding: "0.5rem 0" }}>
+                  <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1.2rem", color: "#f97316", marginBottom: "0.5rem" }}>
+                    Message sent
+                  </div>
+                  <p style={{ color: "#94a3b8", fontSize: "0.9rem", lineHeight: 1.7, marginBottom: "1.25rem" }}>
+                    Thanks for writing to us. We will reply to your email within 24 hours.
+                  </p>
+                  <button type="button" className="submit-btn" onClick={() => setStatus("idle")}>
+                    Send another message
+                  </button>
                 </div>
+              ) : (
+                <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.1rem" }}>
 
-                {/* Email */}
-                <div>
-                  <label style={{ display: "block", fontFamily: "'Syne', sans-serif", fontSize: "0.8rem", fontWeight: 700, color: "#94a3b8", marginBottom: "0.5rem", letterSpacing: "0.05em", textTransform: "uppercase" }}>
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="you@example.com"
-                    required
-                    className="contact-input"
-                  />
-                </div>
+                  {/* Name */}
+                  <div>
+                    <label style={labelStyle} htmlFor="cf-name">Your Name</label>
+                    <input id="cf-name" type="text" name="name" placeholder="Naresh Bhardwaj" required className="contact-input" />
+                  </div>
 
-                {/* Subject */}
-                <div>
-                  <label style={{ display: "block", fontFamily: "'Syne', sans-serif", fontSize: "0.8rem", fontWeight: 700, color: "#94a3b8", marginBottom: "0.5rem", letterSpacing: "0.05em", textTransform: "uppercase" }}>
-                    Subject
-                  </label>
-                  <select name="subject" className="contact-input" style={{ cursor: "pointer" }}>
-                    <option value="" style={{ background: "#05070f" }}>Select a topic...</option>
-                    <option value="general"     style={{ background: "#05070f" }}>General Question</option>
-                    <option value="collab"      style={{ background: "#05070f" }}>Collaboration / Guest Post</option>
-                    <option value="feedback"    style={{ background: "#05070f" }}>Feedback</option>
-                    <option value="advertise"   style={{ background: "#05070f" }}>Advertise with Us</option>
-                    <option value="bug"         style={{ background: "#05070f" }}>Report an Issue</option>
-                  </select>
-                </div>
+                  {/* Email */}
+                  <div>
+                    <label style={labelStyle} htmlFor="cf-email">Email Address</label>
+                    <input id="cf-email" type="email" name="email" placeholder="you@example.com" required className="contact-input" />
+                  </div>
 
-                {/* Message */}
-                <div>
-                  <label style={{ display: "block", fontFamily: "'Syne', sans-serif", fontSize: "0.8rem", fontWeight: 700, color: "#94a3b8", marginBottom: "0.5rem", letterSpacing: "0.05em", textTransform: "uppercase" }}>
-                    Message
-                  </label>
-                  <textarea
-                    name="message"
-                    placeholder="Write your message here..."
-                    required
-                    rows={5}
-                    className="contact-input"
-                    style={{ resize: "vertical", minHeight: "130px" }}
-                  />
-                </div>
+                  {/* Subject */}
+                  <div>
+                    <label style={labelStyle} htmlFor="cf-subject">Subject</label>
+                    <select id="cf-subject" name="subject" className="contact-input" style={{ cursor: "pointer" }}>
+                      <option value="" style={{ background: "#05070f" }}>Select a topic...</option>
+                      <option value="general"   style={{ background: "#05070f" }}>General Question</option>
+                      <option value="collab"    style={{ background: "#05070f" }}>Collaboration / Guest Post</option>
+                      <option value="feedback"  style={{ background: "#05070f" }}>Feedback</option>
+                      <option value="advertise" style={{ background: "#05070f" }}>Advertise with Us</option>
+                      <option value="bug"       style={{ background: "#05070f" }}>Report an Issue</option>
+                    </select>
+                  </div>
 
-                <button type="submit" className="submit-btn">
-                  Send Message ⚡
-                </button>
+                  {/* Message */}
+                  <div>
+                    <label style={labelStyle} htmlFor="cf-message">Message</label>
+                    <textarea
+                      id="cf-message"
+                      name="message"
+                      placeholder="Write your message here..."
+                      required
+                      rows={5}
+                      className="contact-input"
+                      style={{ resize: "vertical", minHeight: "130px" }}
+                    />
+                  </div>
 
-                <p style={{ color: "#334155", fontSize: "0.75rem", textAlign: "center", fontFamily: "'Outfit', sans-serif" }}>
-                  We never share your email. No spam, ever.
-                </p>
-              </form>
+                  {/* Spam trap: real visitors never see this */}
+                  <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off"
+                    style={{ position: "absolute", left: "-9999px" }} aria-hidden="true" />
+
+                  <button type="submit" className="submit-btn" disabled={status === "sending"}
+                    style={status === "sending" ? { opacity: 0.6, cursor: "wait" } : undefined}>
+                    {status === "sending" ? "Sending..." : "Send Message ⚡"}
+                  </button>
+
+                  {status === "error" && (
+                    <p role="alert" style={{ color: "#ef4444", fontSize: "0.85rem", textAlign: "center" }}>
+                      Message not sent. Check your connection and try again, or email contact@aimaster.dev.
+                    </p>
+                  )}
+
+                  <p style={{ color: "#334155", fontSize: "0.75rem", textAlign: "center", fontFamily: "'Outfit', sans-serif" }}>
+                    We never share your email. No spam, ever.
+                  </p>
+                </form>
+              )}
             </div>
 
             {/* ── RIGHT: INFO + SOCIALS ──────────────────────── */}
