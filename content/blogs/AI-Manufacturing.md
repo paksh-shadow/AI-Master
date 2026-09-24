@@ -1,5 +1,6 @@
 ---
 
+
 title: "AI in Manufacturing: How Smart Factories Are Changing the Way Things Are Made"
 category: "Deep Dive"
 date: "2026-09-24"
@@ -7,18 +8,18 @@ readTime: "12 min"
 author: "Naresh Bhardwaj"
 excerpt: "AI is quietly changing what happens inside factories. From finding defects and predicting machine failures to helping with production, robots, logistics and energy use, here is how artificial intelligence is becoming part of modern manufacturing."
 cover: "🏭"
-keywords:
 
-AI in manufacturing
-Artificial intelligence in manufacturing
-Smart factories
-Smart manufacturing
-Industrial AI
-AI robotics
-Predictive maintenance
-AI quality control
-Future of manufacturing
-Industry 4.0
+keywords:
+  - "AI in manufacturing"
+  - "Artificial intelligence in manufacturing"
+  - "Smart factories"
+  - "Smart manufacturing"
+  - "Industrial AI"
+  - "AI robotics"
+  - "Predictive maintenance"
+  - "AI quality control"
+  - "Future of manufacturing"
+  - "Industry 4.0"
 
 ---
 
