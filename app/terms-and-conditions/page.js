@@ -1,18 +1,16 @@
+import LegalLayout from "../../components/LegalLayout";
+
 export const metadata = {
-  title: "Terms & Conditions | AI Blog",
-  description: "Read the terms and conditions for using AI Blog.",
+  title: "Terms & Conditions | AI MASTER",
+  description: "Read the terms and conditions for using AI MASTER.",
 };
 
-const SITE_NAME = "AI Blog";
+const SITE_NAME = "AI MASTER";
 const CONTACT_EMAIL = "yourmail@example.com"; // apna email daalein
-const LAST_UPDATED = "October 11, 2026";
 
 export default function TermsPage() {
   return (
-    <main className="max-w-3xl mx-auto px-4 py-12 prose dark:prose-invert">
-      <h1>Terms &amp; Conditions</h1>
-      <p><em>Last updated: {LAST_UPDATED}</em></p>
-
+    <LegalLayout title="Terms & Conditions" updated="October 12, 2026">
       <p>
         By accessing or using {SITE_NAME}, you agree to be bound by these Terms &amp; Conditions.
         If you do not agree, please do not use the website.
@@ -26,8 +24,8 @@ export default function TermsPage() {
 
       <h2>2. Intellectual Property</h2>
       <p>
-        All content on this website, including text, graphics, logos and design, is the property of
-        {" "}{SITE_NAME} unless stated otherwise. You may not copy, republish or distribute our
+        All content on this website, including text, graphics, logos and design, is the property of{" "}
+        {SITE_NAME} unless stated otherwise. You may not copy, republish or distribute our
         content without prior written permission.
       </p>
 
@@ -69,6 +67,6 @@ export default function TermsPage() {
         Questions about these terms? Email us at{" "}
         <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
       </p>
-    </main>
+    </LegalLayout>
   );
 }

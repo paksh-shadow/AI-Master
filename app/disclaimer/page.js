@@ -1,18 +1,16 @@
+import LegalLayout from "../../components/LegalLayout";
+
 export const metadata = {
-  title: "Disclaimer | AI Blog",
-  description: "Disclaimer for content published on AI Blog.",
+  title: "Disclaimer | AI MASTER",
+  description: "Disclaimer for content published on AI MASTER.",
 };
 
-const SITE_NAME = "AI Blog";
+const SITE_NAME = "AI MASTER";
 const CONTACT_EMAIL = "yourmail@example.com"; // apna email daalein
-const LAST_UPDATED = "October 11, 2026";
 
 export default function DisclaimerPage() {
   return (
-    <main className="max-w-3xl mx-auto px-4 py-12 prose dark:prose-invert">
-      <h1>Disclaimer</h1>
-      <p><em>Last updated: {LAST_UPDATED}</em></p>
-
+    <LegalLayout title="Disclaimer" updated="October 12, 2026">
       <h2>General Information</h2>
       <p>
         The information on {SITE_NAME} is provided for general informational and educational
@@ -56,6 +54,6 @@ export default function DisclaimerPage() {
       <p>
         Questions? Email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
       </p>
-    </main>
+    </LegalLayout>
   );
 }

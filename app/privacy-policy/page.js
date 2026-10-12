@@ -1,18 +1,16 @@
+import LegalLayout from "../../components/LegalLayout";
+
 export const metadata = {
-  title: "Privacy Policy | AI Blog",
-  description: "Learn how AI Blog collects, uses and protects your information.",
+  title: "Privacy Policy | AI MASTER",
+  description: "Learn how AI MASTER collects, uses and protects your information.",
 };
 
-const SITE_NAME = "AI Blog";
+const SITE_NAME = "AI MASTER";
 const CONTACT_EMAIL = "yourmail@example.com"; // apna email daalein
-const LAST_UPDATED = "October 11, 2026";
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="max-w-3xl mx-auto px-4 py-12 prose dark:prose-invert">
-      <h1>Privacy Policy</h1>
-      <p><em>Last updated: {LAST_UPDATED}</em></p>
-
+    <LegalLayout title="Privacy Policy" updated="October 12, 2026">
       <p>
         At {SITE_NAME}, your privacy is important to us. This Privacy Policy explains what
         information we collect when you visit our website and how we use it.
@@ -75,6 +73,6 @@ export default function PrivacyPolicyPage() {
         If you have questions about this policy, email us at{" "}
         <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
       </p>
-    </main>
+    </LegalLayout>
   );
 }
