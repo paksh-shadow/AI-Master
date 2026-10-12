@@ -1,5 +1,6 @@
 import { Analytics } from '@vercel/analytics/react';
 import Script from 'next/script';
+import Footer from '../components/Footer';
 
 export const metadata = {
   title: "AI MASTER - AI Blog",
@@ -11,15 +12,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <meta name="google-site-verification" content="n5mvpFVWwTDSVwOa1opgQ9f6yqtp4sCKYbhmUweGgpQ" />
-
-        {/* Google AdSense */}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9687541571045033"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-Y9XB5WXDL2" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
@@ -32,6 +24,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         {children}
+        <Footer />
         <Analytics />
       </body>
     </html>
