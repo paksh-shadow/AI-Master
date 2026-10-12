@@ -90,7 +90,7 @@ function Footer() {
         <div className="footer-grid" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: "3rem", marginBottom: "3rem" }}>
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "1rem" }}>
-              <div style={{ width: 32, height: 32, borderRadius: "8px", background: "linear-gradient(135deg, #f97316, #dc2626)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1rem" }}>⚡</div>
+              <div style={{ width: 32, height: 32, borderRadius: "8px", background: "linear-gradient(135deg, #f97316, #dc2626)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1rem" }}>shadow</div>
               <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1.15rem", color: "#fff" }}>AI MASTER</span>
             </div>
             <p style={{ color: "#334155", fontSize: "0.85rem", lineHeight: 1.75, maxWidth: "280px", fontFamily: "'Outfit', sans-serif" }}>Your daily source for AI news, tool reviews, and in-depth tutorials.</p>
