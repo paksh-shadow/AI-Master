@@ -1,6 +1,5 @@
 import { Analytics } from '@vercel/analytics/react';
 import Script from 'next/script';
-import Footer from '../components/Footer';
 
 export const metadata = {
   title: "AI MASTER - AI Blog",
@@ -24,7 +23,6 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         {children}
-        <Footer />
         <Analytics />
       </body>
     </html>
