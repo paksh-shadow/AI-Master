@@ -107,8 +107,8 @@ function Footer() {
             ))}
           </div>
           <div>
-            <h4 style={{ fontFamily: "'Syne', sans-serif", color: "#fff", fontSize: "0.82rem", marginBottom: "1.2rem", letterSpacing: "0.1em", textTransform: "uppercase" }}>Authors</h4>
-            {["Naresh Bhardwaj", "Shadow Paksh"].map(a => (
+            <h4 style={{ fontFamily: "'Syne', sans-serif", color: "#fff", fontSize: "0.82rem", marginBottom: "1.2rem", letterSpacing: "0.1em", textTransform: "uppercase" }}>Creators</h4>
+            {["Velqor City", "Shadow Paksh"].map(a => (
               <div key={a} style={{ color: "#334155", fontSize: "0.85rem", marginBottom: "0.55rem", fontFamily: "'Outfit', sans-serif" }}>{a}</div>
             ))}
           </div>
