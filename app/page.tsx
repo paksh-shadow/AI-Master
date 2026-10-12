@@ -24,6 +24,14 @@ const NAV_PATHS: Record<string, string> = {
 };
 const categories = ["All", "AI Tools", "Tutorials", "Deep Dive", "Education", "Productivity", "Industry"];
 
+const FOOTER_LINKS = [
+  { href: "/about", label: "About Us" },
+  { href: "/contact", label: "Contact Us" },
+  { href: "/privacy-policy", label: "Privacy Policy" },
+  { href: "/terms-and-conditions", label: "Terms & Conditions" },
+  { href: "/disclaimer", label: "Disclaimer" },
+];
+
 function formatContent(content: string) {
   return content.split("\n\n").map((p, i) => {
     const bold = p.match(/^\*\*(.+?)\*\*/);
@@ -105,9 +113,16 @@ function Footer() {
             ))}
           </div>
         </div>
-        <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: "1.5rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
-          <span style={{ color: "#1e293b", fontSize: "0.8rem", fontFamily: "'Outfit', sans-serif" }}>© 2025 AI MASTER. All rights reserved.</span>
-          <span style={{ color: "#f97316", fontSize: "0.8rem", fontFamily: "'Outfit', sans-serif", fontWeight: 600 }}>Built with ⚡ & AI</span>
+        <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: "1.5rem" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.6rem 1.75rem", marginBottom: "1.25rem" }}>
+            {FOOTER_LINKS.map(l => (
+              <Link key={l.href} href={l.href} style={{ color: "#64748b", fontSize: "0.82rem", fontFamily: "'Outfit', sans-serif", textDecoration: "none" }}>{l.label}</Link>
+            ))}
+          </div>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
+            <span style={{ color: "#475569", fontSize: "0.8rem", fontFamily: "'Outfit', sans-serif" }}>© {new Date().getFullYear()} AI MASTER. All rights reserved.</span>
+            <span style={{ color: "#f97316", fontSize: "0.8rem", fontFamily: "'Outfit', sans-serif", fontWeight: 600 }}>Built with ⚡ & AI</span>
+          </div>
         </div>
       </div>
     </footer>
