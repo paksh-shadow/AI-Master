@@ -43,6 +43,7 @@ const tools = [
     pricingType: "freemium",
     description: "Google's multimodal AI — works with text, images, and integrates with Google Workspace.",
     url: "https://gemini.google.com",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Google_Gemini_logo.svg/512px-Google_Gemini_logo.svg.png",
     tags: ["Writing", "Search", "Multimodal"],
     accent: "#3b82f6",
   },
@@ -312,7 +313,11 @@ export default function AIToolsPage() {
             <div style={{ background: `linear-gradient(135deg, ${tool.accent}18, rgba(5,7,15,0.8))`, padding: "1.5rem 1.5rem 1.2rem", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                  <div style={{ width: 48, height: 48, borderRadius: "12px", background: `${tool.accent}22`, border: `1px solid ${tool.accent}44`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.6rem" }}>{tool.emoji}</div>
+                  {tool.image ? (
+                    <img src={tool.image} alt={tool.name} style={{ width: 48, height: 48, borderRadius: "12px", objectFit: "contain", background: `${tool.accent}22`, border: `1px solid ${tool.accent}44`, padding: 4 }} />
+                  ) : (
+                    <div style={{ width: 48, height: 48, borderRadius: "12px", background: `${tool.accent}22`, border: `1px solid ${tool.accent}44`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.6rem" }}>{tool.emoji}</div>
+                  )}
                   <div>
                     <h3 style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1rem", color: "#fff", margin: 0 }}>{tool.name}</h3>
                     <span style={{ fontSize: "0.68rem", fontFamily: "'Syne', sans-serif", fontWeight: 700, color: tool.accent, textTransform: "uppercase", letterSpacing: "0.08em" }}>{tool.category}</span>
