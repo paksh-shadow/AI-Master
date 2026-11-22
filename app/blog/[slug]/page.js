@@ -175,7 +175,13 @@ export default async function BlogPost({ params }) {
             background: `linear-gradient(135deg, ${cs.bg}, rgba(5,7,15,0.9))`,
             border: "1px solid rgba(255,255,255,0.07)",
             borderRadius: "20px", padding: "2.5rem", marginBottom: "3rem",
-          }}>{post.cover}</div>
+          }}>
+            {post.cover && post.cover.includes('.') ? (
+              <img src={`/blogs/${post.cover}`} alt={post.title} style={{ maxWidth: "100%", height: "auto", borderRadius: "12px" }} />
+            ) : (
+              post.cover
+            )}
+          </div>
 
           <div style={{ fontSize: "1rem" }}>
             {renderContent(post.content)}
@@ -208,7 +214,13 @@ export default async function BlogPost({ params }) {
                     borderRadius: "14px", overflow: "hidden",
                     display: "flex", flexDirection: "column",
                   }}>
-                    <div style={{ background: `linear-gradient(135deg, ${rcs.bg}, rgba(5,7,15,0.85))`, height: "80px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "2.2rem", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>{rp.cover}</div>
+                    <div style={{ background: `linear-gradient(135deg, ${rcs.bg}, rgba(5,7,15,0.85))`, height: "80px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "2.2rem", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+                      {rp.cover && rp.cover.includes('.') ? (
+                        <img src={`/blogs/${rp.cover}`} alt={rp.title} style={{ maxWidth: "100%", maxHeight: "100%", borderRadius: "8px", objectFit: "cover" }} />
+                      ) : (
+                        rp.cover
+                      )}
+                    </div>
                     <div style={{ padding: "1rem" }}>
                       <div style={{ color: rcs.accent, fontSize: "0.68rem", fontFamily: "'Syne', sans-serif", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "0.5rem" }}>{rp.category}</div>
                       <div style={{ fontFamily: "'Syne', sans-serif", fontSize: "0.9rem", fontWeight: 700, color: "#e2e8f0", lineHeight: 1.35, marginBottom: "0.5rem" }}>{rp.title}</div>

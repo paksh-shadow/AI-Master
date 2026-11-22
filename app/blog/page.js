@@ -178,7 +178,13 @@ export default function BlogPage() {
                   height: "110px", display: "flex", alignItems: "center",
                   justifyContent: "center", fontSize: "3.2rem",
                   borderBottom: "1px solid rgba(255,255,255,0.05)",
-                }}>{post.cover}</div>
+                }}>
+                  {post.cover && post.cover.includes('.') ? (
+                    <img src={`/blogs/${post.cover}`} alt={post.title} style={{ maxWidth: "100%", maxHeight: "100%", borderRadius: "8px", objectFit: "cover" }} />
+                  ) : (
+                    post.cover
+                  )}
+                </div>
                 <div style={{ padding: "1.4rem", flex: 1, display: "flex", flexDirection: "column" }}>
                   <div style={{
                     display: "inline-flex", alignItems: "center", gap: 4,
