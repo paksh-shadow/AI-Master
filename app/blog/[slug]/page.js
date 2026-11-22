@@ -2,7 +2,9 @@
 
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getAllPosts } from "@/lib/posts";
+import { siteConfig } from "@/lib/site";
 
 const catStyle = {
   "AI Tools":   { accent: "#f97316", bg: "rgba(249,115,22,0.12)" },
@@ -17,10 +19,41 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const posts = getAllPosts();
   const post = posts.find((p) => p.slug === slug);
-  if (!post) return { title: "Post Not Found — AI MASTER" };
+  if (!post) return { title: "Post Not Found — " + siteConfig.name };
+
+  const postUrl = `${siteConfig.url}/blog/${post.slug}`;
+  const imageUrl = post.cover && post.cover.includes('.')
+    ? `${siteConfig.url}/blogs/${post.cover}`
+    : siteConfig.ogImage;
+
   return {
-    title: `${post.title} — AI MASTER`,
+    title: `${post.title} — ${siteConfig.name}`,
     description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: postUrl,
+      siteName: siteConfig.name,
+      type: "article",
+      publishedTime: post.date,
+      authors: [post.author],
+      tags: post.tags || [],
+      images: [{ url: imageUrl, width: 1200, height: 630, alt: post.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      site: siteConfig.twitter,
+      creator: siteConfig.twitter,
+      images: [imageUrl],
+    },
+    other: {
+      "article:published_time": post.date,
+      "article:author": post.author,
+      "article:section": post.category,
+      "article:tag": post.tags?.join(", ") || "",
+    },
   };
 }
 
@@ -70,6 +103,39 @@ export default async function BlogPost({ params }) {
 
   if (!post) return notFound();
 
+  // JSON-LD structured data
+  const postUrl = `${siteConfig.url}/blog/${post.slug}`;
+  const imageUrl = post.cover && post.cover.includes('.')
+    ? `${siteConfig.url}/blogs/${post.cover}`
+    : siteConfig.ogImage;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    image: imageUrl,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      "@type": "Person",
+      name: post.author,
+      url: siteConfig.url,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteConfig.url}/logo.png`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": postUrl,
+    },
+    keywords: post.tags?.join(", ") || "",
+  };
+
   const cs = catStyle[post.category] || { accent: "#f97316", bg: "rgba(249,115,22,0.12)" };
   const related = posts
     .filter((p) => p.category === post.category && p.slug !== post.slug)
@@ -77,6 +143,10 @@ export default async function BlogPost({ params }) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@400;500;600&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -106,7 +176,7 @@ export default async function BlogPost({ params }) {
         }}>
           <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "10px" }}>
             <div style={{ width: 32, height: 32, borderRadius: "8px", background: "linear-gradient(135deg, #f97316, #dc2626)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1rem" }}>⚡</div>
-            <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1.15rem", color: "#fff", letterSpacing: "-0.02em" }}>AI MASTER</span>
+            <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1.15rem", color: "#fff", letterSpacing: "-0.02em" }}>{siteConfig.name}</span>
           </Link>
           <div className="desktop-nav" style={{ display: "flex", gap: "2rem" }}>
             {[["Home", "/"], ["Blogs", "/blog"], ["About Us", "/about"], ["Contact", "/contact"]].map(([label, href]) => (
@@ -177,7 +247,14 @@ export default async function BlogPost({ params }) {
             borderRadius: "20px", padding: "2.5rem", marginBottom: "3rem",
           }}>
             {post.cover && post.cover.includes('.') ? (
-              <img src={`/blogs/${post.cover}`} alt={post.title} style={{ maxWidth: "100%", height: "auto", borderRadius: "12px" }} />
+              <Image
+                src={`/blogs/${post.cover}`}
+                alt={post.title}
+                width={1200}
+                height={630}
+                style={{ maxWidth: "100%", height: "auto", borderRadius: "12px" }}
+                priority
+              />
             ) : (
               post.cover
             )}
@@ -216,7 +293,14 @@ export default async function BlogPost({ params }) {
                   }}>
                     <div style={{ background: `linear-gradient(135deg, ${rcs.bg}, rgba(5,7,15,0.85))`, height: "80px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "2.2rem", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
                       {rp.cover && rp.cover.includes('.') ? (
-                        <img src={`/blogs/${rp.cover}`} alt={rp.title} style={{ maxWidth: "100%", maxHeight: "100%", borderRadius: "8px", objectFit: "cover" }} />
+                        <Image
+                          src={`/blogs/${rp.cover}`}
+                          alt={rp.title}
+                          width={400}
+                          height={225}
+                          style={{ maxWidth: "100%", maxHeight: "100%", borderRadius: "8px", objectFit: "cover" }}
+                          sizes="100vw"
+                        />
                       ) : (
                         rp.cover
                       )}
@@ -237,9 +321,9 @@ export default async function BlogPost({ params }) {
         <footer style={{ background: "#030508", borderTop: "1px solid rgba(249,115,22,0.12)", padding: "2rem", textAlign: "center" }}>
           <Link href="/" style={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px", marginBottom: "0.75rem" }}>
             <div style={{ width: 28, height: 28, borderRadius: "7px", background: "linear-gradient(135deg, #f97316, #dc2626)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.9rem" }}>⚡</div>
-            <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1rem", color: "#fff" }}>AI MASTER</span>
+            <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1rem", color: "#fff" }}>{siteConfig.name}</span>
           </Link>
-          <p style={{ color: "#334155", fontSize: "0.8rem" }}>© 2025 AI MASTER. All rights reserved.</p>
+          <p style={{ color: "#334155", fontSize: "0.8rem" }}>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
         </footer>
 
       </div>

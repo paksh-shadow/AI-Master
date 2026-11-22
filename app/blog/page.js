@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { siteConfig } from "@/lib/site";
 
 const catStyle = {
   "AI Tools":    { accent: "#f97316", bg: "rgba(249,115,22,0.12)" },
@@ -84,7 +86,7 @@ export default function BlogPage() {
         }}>
           <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "10px" }}>
             <div style={{ width: 32, height: 32, borderRadius: "8px", background: "linear-gradient(135deg, #f97316, #dc2626)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1rem" }}>⚡</div>
-            <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1.15rem", color: "#fff", letterSpacing: "-0.02em" }}>AI MASTER</span>
+            <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1.15rem", color: "#fff", letterSpacing: "-0.02em" }}>{siteConfig.name}</span>
           </Link>
           <div className="desktop-nav" style={{ display: "flex", gap: "2rem" }}>
             {[["Home", "/"], ["Blogs", "/blog"], ["AI Tools", "/ai-tools"], ["About Us", "/about"], ["Contact", "/contact"]].map(([label, href]) => (
@@ -180,7 +182,14 @@ export default function BlogPage() {
                   borderBottom: "1px solid rgba(255,255,255,0.05)",
                 }}>
                   {post.cover && post.cover.includes('.') ? (
-                    <img src={`/blogs/${post.cover}`} alt={post.title} style={{ maxWidth: "100%", maxHeight: "100%", borderRadius: "8px", objectFit: "cover" }} />
+                    <Image
+                      src={`/blogs/${post.cover}`}
+                      alt={post.title}
+                      width={320}
+                      height={110}
+                      style={{ maxWidth: "100%", maxHeight: "100%", borderRadius: "8px", objectFit: "cover" }}
+                      sizes="100vw"
+                    />
                   ) : (
                     post.cover
                   )}
@@ -224,9 +233,9 @@ export default function BlogPage() {
         <footer style={{ background: "#030508", borderTop: "1px solid rgba(249,115,22,0.12)", padding: "2rem", textAlign: "center" }}>
           <Link href="/" style={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px", marginBottom: "0.75rem" }}>
             <div style={{ width: 28, height: 28, borderRadius: "7px", background: "linear-gradient(135deg, #f97316, #dc2626)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.9rem" }}>⚡</div>
-            <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1rem", color: "#fff" }}>AI MASTER</span>
+            <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1rem", color: "#fff" }}>{siteConfig.name}</span>
           </Link>
-          <p style={{ color: "#334155", fontSize: "0.8rem" }}>© 2025 AI MASTER. All rights reserved.</p>
+          <p style={{ color: "#334155", fontSize: "0.8rem" }}>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
         </footer>
 
       </div>

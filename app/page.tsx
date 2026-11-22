@@ -1,9 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { siteConfig } from "@/lib/site";
 
 if (typeof document !== "undefined") {
-  document.title = "AI MASTER - AI Blog";
+  document.title = `${siteConfig.name} - AI Blog`;
 }
 
 const catStyle: Record<string, { accent: string; bg: string }> = {
@@ -59,7 +60,7 @@ function Navbar({ onHome }: { onHome: () => void }) {
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0 1.5rem", height: "64px" }}>
         <Link href="/" onClick={() => setMenuOpen(false)} style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "10px" }}>
           <div style={{ width: 34, height: 34, borderRadius: "9px", background: "linear-gradient(135deg, #f97316, #dc2626)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.1rem" }}>⚡</div>
-          <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1.2rem", color: "#fff", letterSpacing: "-0.02em" }}>AI MASTER</span>
+          <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1.2rem", color: "#fff", letterSpacing: "-0.02em" }}>{siteConfig.name}</span>
         </Link>
         <div className="mobile-nav-links" style={{ display: "flex", gap: "2.5rem", alignItems: "center" }}>
           {NAV_LINKS.map((link) => (
@@ -91,7 +92,7 @@ function Footer() {
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "1rem" }}>
               <div style={{ width: 32, height: 32, borderRadius: "8px", background: "linear-gradient(135deg, #f97316, #dc2626)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1rem" }}>⚡</div>
-              <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1.15rem", color: "#fff" }}>AI MASTER</span>
+              <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1.15rem", color: "#fff" }}>{siteConfig.name}</span>
             </div>
             <p style={{ color: "#334155", fontSize: "0.85rem", lineHeight: 1.75, maxWidth: "280px", fontFamily: "'Outfit', sans-serif" }}>Your daily source for AI news, tool reviews, and in-depth tutorials.</p>
             <div style={{ display: "flex", gap: "12px", marginTop: "1.25rem" }}>
@@ -126,7 +127,7 @@ function Footer() {
             ))}
           </div>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
-            <span style={{ color: "#475569", fontSize: "0.8rem", fontFamily: "'Outfit', sans-serif" }}>© {new Date().getFullYear()} AI MASTER. All rights reserved.</span>
+            <span style={{ color: "#475569", fontSize: "0.8rem", fontFamily: "'Outfit', sans-serif" }}>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</span>
             <span style={{ color: "#f97316", fontSize: "0.8rem", fontFamily: "'Outfit', sans-serif", fontWeight: 600 }}>Shadow paksh</span>
           </div>
         </div>

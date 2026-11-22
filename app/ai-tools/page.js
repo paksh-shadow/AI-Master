@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { siteConfig } from "@/lib/site";
 
 const NAV_LINKS = ["Home", "Blogs", "About Us", "Contact"];
 const NAV_PATHS = {
@@ -188,7 +189,7 @@ function Navbar() {
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0 1.5rem", height: "64px" }}>
         <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "10px" }}>
           <div style={{ width: 34, height: 34, borderRadius: "9px", background: "linear-gradient(135deg, #f97316, #dc2626)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.1rem" }}>⚡</div>
-          <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1.2rem", color: "#fff", letterSpacing: "-0.02em" }}>AI MASTER</span>
+          <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1.2rem", color: "#fff", letterSpacing: "-0.02em" }}>{siteConfig.name}</span>
         </Link>
         <div className="mobile-nav-links" style={{ display: "flex", gap: "2.5rem", alignItems: "center" }}>
           {NAV_LINKS.map((link) => (
