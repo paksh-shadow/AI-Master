@@ -42,8 +42,8 @@ Main daily ye places scroll karta hoon:
 - Facebook Groups — join karo jahan tumhari audience hangout karti hai
 
 In phrases ko dhundho:
-- "Is there a tool for..."
-- "I wish something could..."
+- "Is there a tool for"
+- "I wish something could"
 - Asli example: Maine ek freelancer ka tweet dekha: "Spent 2 hours turning a client call transcript into a case study. There has to be a better way."
 
 Ye dard hai. Ye problem solve karne layak hai.
@@ -67,14 +67,14 @@ Maine chaar ideas is tarike se maar diye the pehle — phir ek mila jisme teen d
 
 Mera go-to stack AI Micro-SaaS ke liye:
 
-| Purpose | No-Code Option | Code Option |
-|---------|---------------|-------------|
-| Frontend | Bubble, Softr, Framer | Next.js, SvelteKit |
-| Backend | Airtable, Notion API | Supabase, Firebase |
-| AI | Zapier + OpenAI | Direct API (Groq, OpenAI, Anthropic) |
-| Payments | Lemon Squeezy, Gumroad | Stripe |
-| Auth | Memberstack, Outseta | Clerk, Auth0 |
-| Email | ConvertKit, Beehiiv | Resend, SendGrid |
+ Purpose / No-Code Option / Code Option 
+
+ Frontend  Bubble, Softr, Framer / Next.js, SvelteKit 
+ Backend / Airtable, Notion API / Supabase, Firebase 
+ AI / Zapier + OpenAI / Direct API (Groq, OpenAI, Anthropic) 
+ Payments / Lemon Squeezy, Gumroad / Stripe 
+ Auth / Memberstack, Outseta / Clerk, Auth0 
+ Email / ConvertKit, Beehiiv / Resend, SendGrid
 
 Mera advice: No-code se shuru karo. Limits aayengi (aayengi hi), tab code add karo gradually. Scratch se sab mat banao jab tak zaroorat na ho.
 
