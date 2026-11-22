@@ -88,6 +88,8 @@ export default async function BlogPost({ params }) {
           .article-wrap { padding: 2rem 1.2rem 3rem !important; }
           .related-grid { grid-template-columns: 1fr !important; }
           .desktop-nav  { display: none !important; }
+          .mobile-menu-btn { display: block !important; }
+          .mobile-menu-panel { display: block !important; }
         }
       `}</style>
 
@@ -117,6 +119,14 @@ export default async function BlogPost({ params }) {
               }}>{label}</Link>
             ))}
           </div>
+          <details className="mobile-menu-btn" style={{ display: "none", position: "relative" }}>
+            <summary style={{ listStyle: "none", cursor: "pointer", color: "#fff", fontSize: "1.5rem", lineHeight: 1, userSelect: "none" }}>☰</summary>
+            <div style={{ position: "absolute", right: 0, top: "calc(100% + 8px)", background: "rgba(5,7,15,0.98)", border: "1px solid rgba(249,115,22,0.2)", borderRadius: "10px", padding: "0.5rem 0", minWidth: "160px", zIndex: 200, boxShadow: "0 10px 30px rgba(0,0,0,0.4)" }}>
+              {[["Home", "/"], ["Blogs", "/blog"], ["About Us", "/about"], ["Contact", "/contact"]].map(([label, href]) => (
+                <Link key={label} href={href} style={{ display: "block", padding: "0.6rem 1.2rem", color: label === "Blogs" ? "#f97316" : "rgba(255,255,255,0.7)", fontFamily: "'Syne', sans-serif", fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}>{label}</Link>
+              ))}
+            </div>
+          </details>
         </nav>
 
         {/* ARTICLE */}
