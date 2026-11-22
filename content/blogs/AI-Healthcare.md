@@ -3,7 +3,7 @@ title: "AI ka Healthcare mein Use 2026 — Diagnosis se Treatment Tak Poori Jank
 category: "Industry"
 date: "2026-08-31"
 readTime: "7 min"
-author: "Naresh Bhardwaj"
+author: "Velqor"
 excerpt: "Jaaniye kaise AI 2026 mein India ke healthcare system ko badal raha hai — diagnosis, telemedicine, drug discovery aur government ki SAHI policy ke saath poori detail."
 cover: "🏥"
 keywords: "AI ka healthcare mein use, AI medical diagnosis India, healthcare AI tools 2026, SAHI framework India, eSanjeevani AI telemedicine"

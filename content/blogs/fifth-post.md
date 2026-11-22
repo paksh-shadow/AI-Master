@@ -3,7 +3,7 @@ title: "LLM Kya Hota Hai? ChatGPT Ka Brain Kaise Kaam Karta Hai - Poori Jaankari
 category: "Education"
 date: "2026-06-29"
 readTime: "9 min"
-author: "Naresh Bhardwaj"
+author: "Velqor"
 excerpt: "LLM (Large Language Model) kya hota hai aur ChatGPT jaise AI tools andar se kaise sochte hain - simple Hinglish me poori explanation, examples ke saath."
 cover: "🧠"
 keywords: "LLM kya hota hai, ChatGPT kaise kaam karta hai, Large Language Model in Hindi, AI brain explanation, transformer architecture hindi, RLHF kya hai"

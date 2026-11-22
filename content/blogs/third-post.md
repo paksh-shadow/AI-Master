@@ -3,7 +3,7 @@ title: "AI AUTOMATION"
 category: "Deep Dive"
 date: "2025-03-21"
 readTime: "5 min"
-author: "Naresh Bhardwaj"
+author: "Velqor"
 excerpt: "AI Automaation work kaise karta aap kaise kar sakte ho "
 cover: "⚙️"
 ---

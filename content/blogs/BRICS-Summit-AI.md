@@ -3,7 +3,7 @@ title: "BRICS Summit 2026 Mein AI Ka Role — India Kya Plan Kar Raha Hai Duniya
 category: "Industry"
 date: "2026-09-11"
 readTime: "8 min"
-author: "Naresh Bhardwaj"
+author: "Velqor"
 excerpt: "Kal yaani 12 September 2026 ko Delhi mein BRICS Summit shuru ho raha hai. India ne AI, digital payments aur technology cooperation ka agenda set kiya hai. Jaaniye poori detail — kya hoga, kyon matters karta hai, aur India ko kya milega."
 cover: "🌏"
 keywords: "BRICS Summit 2026 AI India, BRICS Delhi September 2026, India AI BRICS technology cooperation, BRICS 2026 digital payments AI, India BRICS chairmanship 2026"

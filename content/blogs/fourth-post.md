@@ -3,7 +3,7 @@ title: "ChatGPT Se Professional Resume Kaise Banaye - Complete Step by Step Guid
 category: "Tutorials"
 date: "2026-06-25"
 readTime: "8 min"
-author: "Naresh Bhardwaj"
+author: "Velqor"
 excerpt: "ChatGPT ka use karke free me professional, ATS-friendly resume banane ka complete tutorial - step by step prompts ke saath."
 cover: "📄"
 ---

@@ -3,7 +3,7 @@ title: "AI Se Apni 80s Style Photo Kaise Banaye — Ghar Baithe Viral Retro Look
 category: "Tutorials"
 date: "2026-09-11"
 readTime: "7 min"
-author: "Naresh Bhardwaj"
+author: "Velqor"
 excerpt: "Instagram par 80s AI photo trend aaj India mein number one viral hai — Parineeti Chopra se lekar politicians tak sab try kar rahe hain. Jaaniye ChatGPT aur free tools se ghar baithe apni retro 80s photo kaise banayein — step by step guide ke saath."
 cover: "📸"
 keywords: "AI se 80s photo kaise banaye, 80s AI photo trend India, ChatGPT se retro photo banao, viral 80s photo trend 2026, AI vintage photo generator free"

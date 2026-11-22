@@ -3,7 +3,7 @@ title: "AI se Financial System ko Risk — Wo Khatra Jo Dikhta Nahi"
 category: "AI Tools"
 date: "2026-04-19"
 readTime: "6 min"
-author: "Naresh Bhardwaj"
+author: "Velqor"
 excerpt: "AI aaj banks aur stock markets mein chhupa hua hai. Janiye kaise ek galat algorithm puri economy ko hila sakta hai."
 cover: "📉"
 ---

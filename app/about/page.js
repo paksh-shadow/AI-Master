@@ -234,7 +234,7 @@ export default function AboutPage() {
                   fontSize: "1.5rem", flexShrink: 0
                 }}>👨‍💻</div>
                 <div>
-                  <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: "1.05rem", color: "#fff" }}>Naresh Bhardwaj</div>
+                  <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: "1.05rem", color: "#fff" }}>Velqor</div>
                   <div style={{
                     display: "inline-flex", alignItems: "center", gap: 4, marginTop: "4px",
                     background: "rgba(249,115,22,0.12)", color: "#f97316",
@@ -246,7 +246,7 @@ export default function AboutPage() {
               </div>
               <p style={{ color: "#64748b", fontSize: "0.875rem", lineHeight: 1.75, marginBottom: "1.25rem" }}>
                 AI researcher and full-stack developer with a passion for making machine learning
-                accessible. Naresh covers deep dives into LLMs, Next.js AI apps, and the future
+                accessible. Velqor covers deep dives into LLMs, Next.js AI apps, and the future
                 of work in the age of AI. He believes the best way to understand AI is to build with it.
               </p>
               <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>

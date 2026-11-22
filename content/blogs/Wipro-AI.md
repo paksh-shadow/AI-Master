@@ -3,7 +3,7 @@ title: "Wipro Ne AI Se 20,000 Logon Ka Kaam Bachaya — Naukri Gayi Ya Nahi? Poo
 category: "Deep Dive"
 date: "2026-09-16"
 readTime: "9 min"
-author: "Naresh Bhardwaj"
+author: "Velqor"
 excerpt: "10 September 2026 ko Reuters ne report kiya ki Wipro ke AI tools ne 20,000 employees ke barabar kaam kar liya — aur kisi ki naukri nahi gayi. Ye headline scary lagti hai par reality bilkul alag hai. Poori kahani yahan samjho."
 cover: "💼"
 keywords: "Wipro AI 20000 employees, Wipro AI naukri gayi, Wipro human AI model, India IT jobs AI 2026, Wipro AI redeployment kya hua"

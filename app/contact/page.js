@@ -235,7 +235,7 @@ export default function ContactPage() {
                   {/* Name */}
                   <div>
                     <label style={labelStyle} htmlFor="cf-name">Your Name</label>
-                    <input id="cf-name" type="text" name="name" placeholder="Naresh Bhardwaj" required className="contact-input" />
+                    <input id="cf-name" type="text" name="name" placeholder="Velqor" required className="contact-input" />
                   </div>
 
                   {/* Email */}

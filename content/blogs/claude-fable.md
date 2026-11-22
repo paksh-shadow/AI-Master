@@ -3,7 +3,7 @@ title: "Claude Fable 5.1 Kya Hai — ChatGPT aur Gemini Se Kitna Alag Hai? Poori
 category: "AI Tools"
 date: "2026-09-05"
 readTime: "8 min"
-author: "Naresh Bhardwaj"
+author: "Velqor"
 excerpt: "Anthropic ne 1 September 2026 ko Claude Fable 5.1 launch kiya — coding, research aur problem-solving mein GPT-5.6 Sol ko bhi peeche chhod diya. Jaaniye kya hai khaas aur aapke kaam ka hai ya nahi."
 cover: "🤖"
 keywords: "Claude Fable 5.1 kya hai, Claude Fable 5.1 vs ChatGPT, Anthropic new model 2026, Claude Fable 5.1 features Hindi, Claude Mythos 5.1 kya hai"

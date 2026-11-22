@@ -3,7 +3,7 @@ title: "Google Gemini Free vs Paid — Kya Fark Hai aur Aapke Liye Kaunsa Sahi H
 category: "AI Tools"
 date: "2026-09-05"
 readTime: "8 min"
-author: "Naresh Bhardwaj"
+author: "Velqor"
 excerpt: "Google Gemini ka free plan kaafi kaam ka hai, par paid mein kya extra milta hai? Poori detail ke saath samjho ki aapko actually upgrade karna chahiye ya nahi — 2026 ke latest plans ke saath."
 cover: "💎"
 keywords: "Google Gemini free vs paid, Gemini paid plan worth it, Google AI Plus kya hai, Gemini 2026 plans India, Gemini free mein kya milta hai"

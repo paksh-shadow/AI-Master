@@ -3,7 +3,7 @@ title: "OpenAI IPO Kya Hai? Aam Aadmi Ko Kya Farak Padega — Poori Jaankari 202
 category: "Industry"
 date: "2026-08-09"
 readTime: "12 min"
-author: "Naresh Bhardwaj"
+author: "Velqor"
 excerpt: "OpenAI IPO kya hai, kab hoga, $1 trillion valuation ka matlab kya hai, aur aam ChatGPT users aur Indian investors ko isse kya farak padega — complete analysis simple Hinglish mein."
 cover: "📈"
 keywords: "OpenAI IPO kya hai, OpenAI stock India, ChatGPT IPO 2026, OpenAI valuation 1 trillion, OpenAI IPO date September 2026, AI company IPO India"
