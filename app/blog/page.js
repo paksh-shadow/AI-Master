@@ -220,7 +220,7 @@ export default function BlogPage() {
             <div style={{ width: 28, height: 28, borderRadius: "7px", background: "linear-gradient(135deg, #f97316, #dc2626)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.9rem" }}>⚡</div>
             <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: "1rem", color: "#fff" }}>AI MASTER</span>
           </Link>
-          <p style={{ color: "#334155", fontSize: "0.8rem" }}>© 2025 AI MASTER. All rights reserved. · Built with ⚡ & AI</p>
+          <p style={{ color: "#334155", fontSize: "0.8rem" }}>© 2025 AI MASTER. All rights reserved.</p>
         </footer>
 
       </div>
