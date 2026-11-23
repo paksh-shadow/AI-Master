@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Velqor",
+  name: "AI MASTER",
   tagline: "Deep dives, tutorials, tool reviews, and AI industry insights",
   url: "https://aimasterblog.in",
   ogImage: "/og-default.png",
