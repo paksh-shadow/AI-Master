@@ -241,10 +241,11 @@ export default async function BlogPost({ params }) {
           </div>
 
           <div style={{
-            fontSize: "5rem", textAlign: "center",
+            textAlign: "center",
             background: `linear-gradient(135deg, ${cs.bg}, rgba(5,7,15,0.9))`,
             border: "1px solid rgba(255,255,255,0.07)",
-            borderRadius: "20px", padding: "2.5rem", marginBottom: "3rem",
+            borderRadius: "20px", padding: "1.5rem", marginBottom: "3rem",
+            maxWidth: "100%", overflow: "hidden",
           }}>
             {post.cover && post.cover.includes('.') ? (
               <Image
@@ -252,8 +253,9 @@ export default async function BlogPost({ params }) {
                 alt={post.title}
                 width={1200}
                 height={630}
-                style={{ maxWidth: "100%", height: "auto", borderRadius: "12px" }}
+                style={{ maxWidth: "100%", height: "auto", borderRadius: "12px", display: "block", margin: "0 auto" }}
                 priority
+                sizes="(max-width: 768px) 100vw, 780px"
               />
             ) : (
               post.cover
