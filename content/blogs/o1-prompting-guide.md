@@ -1,7 +1,7 @@
 ---
-title: "o1 Prompting Guide: Reasoning Models Ke Naye Rules (2025)"
+title: "o1 Prompting Guide: Reasoning Models Ke Naye Rules"
 category: "Deep Dive"
-date: "2025-11-27"
+date: "2026-11-27"
 readTime: "15 min"
 author: "Velqor City"
 excerpt: "o1 ko prompt karna GPT-4o jaisa nahi hai. Ye guide batata hai kyun purane techniques fail hoti hain, naya reasoning paradigm kya hai, prompt templates, aur real examples coding, analysis, aur complex reasoning ke liye."
@@ -9,7 +9,7 @@ cover: "🧠"
 tags: ["o1", "Prompt Engineering", "Reasoning Models", "OpenAI", "AI Coding", "LLM"]
 ---
 
-# o1 Prompting Guide: Reasoning Models Ke Naye Rules (2025)
+# o1 Prompting Guide: Reasoning Models Ke Naye Rules
 
 > 📌 **Key Highlights (TL;DR):**
 > - **Point 1:** o1 ek chat model nahi — ye ek **reasoning engine** hai. Isko GPT-4o ki tarah prompt karoge toh uski capability waste hogi.
@@ -478,7 +478,7 @@ Tutorial-style markdown with runnable code snippets
 **A:** Kisi model ki tarah — current context prompt mein do. APIs/libraries ke liye version numbers, recent changelogs, ya docs excerpts **Context** mein daal do.
 
 ### **Q: o1 tools/function calling use kar sakta hai?**
-**A:** 2025 tak, o1 function calling support nahi karta natively. Two-step pattern use karo: o1 generates tool call plan → tumhara code execute karta hai → o1 interprets results.
+**A:** Currently, o1 function calling support nahi karta natively. Two-step pattern use karo: o1 generates tool call plan → tumhara code execute karta hai → o1 interprets results.
 
 ### **Q: Simple tasks ke liye o1 worth hai cost ke hisaab se?**
 **A:** Nahi. GPT-4o / Claude 3.5 Sonnet use karo classification, extraction, formatting, simple Q&A ke liye. o1 reserve karo: complex reasoning, novel code, architecture, debugging, multi-constraint optimization ke liye.
@@ -509,8 +509,8 @@ Tutorial-style markdown with runnable code snippets
 - [Latent Space Podcast: o1 Deep Dive](https://www.latent.space/p/o1) — practitioner insights
 
 ### Content Freshness Signals
-- Add `Updated: November 2025` badge
-- Include model version tested: `o1-preview-2025-09, o1-2025-12`
+- Add `Updated: November 2026` badge
+- Include model version tested: `o1-preview, o1, o3-mini`
 - Note: "Guidance evolves with model updates — check changelog"
 
 ### Schema Markup (JSON-LD)
@@ -518,9 +518,9 @@ Tutorial-style markdown with runnable code snippets
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "o1 Prompting Guide: Reasoning Models Ke Naye Rules (2025)",
-  "datePublished": "2025-11-27",
-  "dateModified": "2025-11-27",
+  "headline": "o1 Prompting Guide: Reasoning Models Ke Naye Rules",
+  "datePublished": "2026-11-27",
+  "dateModified": "2026-11-27",
   "author": {"@type": "Person", "name": "Velqor City"},
   "publisher": {"@type": "Organization", "name": "AI Master Blog"},
   "description": "Complete guide to prompting OpenAI o1 reasoning models with templates, patterns, aur verification loops.",
@@ -557,7 +557,7 @@ Jo developers isko master karte hain, wo "prompt engineers" nahi hain. Wo **spec
 
 ---
 
-*Last updated: November 2025 | Tested on: o1-preview, o1, o3-mini | Author: Velqor City | Blog: AI Master*
+*Last updated: November 2026 | Tested on: o1-preview, o1, o3-mini | Author: Velqor City | Blog: AI Master*
 
 ---
 
