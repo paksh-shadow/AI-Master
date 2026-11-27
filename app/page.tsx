@@ -181,7 +181,23 @@ export default function BlogSite() {
             <span>📅 {post.date}</span>
             <span>⏱ {post.readTime} read</span>
           </div>
-          <div style={{ fontSize: "5rem", textAlign: "center", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: "20px", padding: "2.5rem", marginBottom: "3rem" }}>{post.cover}</div>
+          <div style={{ textAlign: "center", background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: "20px", padding: "1.5rem", marginBottom: "3rem" }}>
+            {post.cover && post.cover.includes('.') ? (
+              <Image
+                src={`/blogs/${post.cover}`}
+                alt={post.title}
+                width={1200}
+                height={630}
+                style={{ maxWidth: "100%", height: "auto", borderRadius: "12px", display: "block", margin: "0 auto" }}
+                priority
+                sizes="(max-width: 768px) 100vw, 780px"
+              />
+            ) : (
+              <div style={{ fontSize: "4rem", lineHeight: 1, color: "#f97316", textShadow: "0 0 40px rgba(249,115,22,0.4)" }}>
+                {post.cover}
+              </div>
+            )}
+          </div>
           <div>{formatContent(post.content || "")}</div>
           <button className="back-btn" onClick={goHome} style={{ marginTop: "3.5rem", background: "rgba(249,115,22,0.1)", border: "1px solid rgba(249,115,22,0.35)", color: "#f97316", padding: "0.7rem 1.6rem", borderRadius: "10px", cursor: "pointer", fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: "0.9rem", transition: "all 0.2s" }}>← Back to Articles</button>
         </article>
@@ -255,7 +271,23 @@ export default function BlogSite() {
                     <span>{fp.readTime} read</span>
                   </div>
                 </div>
-                <div className="featured-emoji" style={{ display: "flex", alignItems: "center", justifyContent: "center", fontSize: "5rem" }}>{fp.cover}</div>
+                <div className="featured-emoji" style={{ display: "flex", alignItems: "center", justifyContent: "center", fontSize: "5rem" }}>
+                  {fp.cover && fp.cover.includes('.') ? (
+                    <Image
+                      src={`/blogs/${fp.cover}`}
+                      alt={fp.title}
+                      width={400}
+                      height={225}
+                      style={{ maxWidth: "100%", maxHeight: "100%", borderRadius: "12px", objectFit: "cover" }}
+                      priority
+                      sizes="140px"
+                    />
+                  ) : (
+                    <div style={{ fontSize: "3rem", color: cs.accent, textShadow: `0 0 30px ${cs.accent}40` }}>
+                      {fp.cover}
+                    </div>
+                  )}
+                </div>
               </div>
             </Link>
           </div>
@@ -268,7 +300,22 @@ export default function BlogSite() {
           return (
             <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: "none" }}>
               <div className="pcard" style={{ background: "rgba(255,255,255,0.025)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: "16px", overflow: "hidden", display: "flex", flexDirection: "column" }}>
-                <div style={{ background: `linear-gradient(135deg, ${cs.bg}, rgba(5,7,15,0.8))`, height: "100px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3rem", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>{post.cover}</div>
+                <div style={{ background: `linear-gradient(135deg, ${cs.bg}, rgba(5,7,15,0.8))`, height: "100px", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3rem", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+                  {post.cover && post.cover.includes('.') ? (
+                    <Image
+                      src={`/blogs/${post.cover}`}
+                      alt={post.title}
+                      width={320}
+                      height={110}
+                      style={{ maxWidth: "100%", maxHeight: "100%", borderRadius: "8px", objectFit: "cover" }}
+                      sizes="100vw"
+                    />
+                  ) : (
+                    <div style={{ fontSize: "2rem", color: cs.accent, textShadow: `0 0 20px ${cs.accent}40` }}>
+                      {post.cover}
+                    </div>
+                  )}
+                </div>
                 <div style={{ padding: "1.4rem", flex: 1, display: "flex", flexDirection: "column" }}>
                   <div style={{ display: "inline-flex", alignItems: "center", gap: 4, background: cs.bg, color: cs.accent, padding: "0.22rem 0.65rem", borderRadius: "10px", fontSize: "0.68rem", fontFamily: "'Syne', sans-serif", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "0.85rem", alignSelf: "flex-start" }}>
                     <span style={{ width: 4, height: 4, borderRadius: "50%", background: cs.accent, display: "inline-block" }} />

@@ -258,7 +258,12 @@ export default async function BlogPost({ params }) {
                 sizes="(max-width: 768px) 100vw, 780px"
               />
             ) : (
-              post.cover
+              <div style={{
+                fontSize: "4rem", lineHeight: 1, padding: "1rem 0",
+                color: cs.accent, textShadow: `0 0 40px ${cs.accent}40`,
+              }}>
+                {post.cover}
+              </div>
             )}
           </div>
 
@@ -304,7 +309,9 @@ export default async function BlogPost({ params }) {
                           sizes="100vw"
                         />
                       ) : (
-                        rp.cover
+                        <div style={{ fontSize: "1.8rem", color: rcs.accent, textShadow: `0 0 20px ${rcs.accent}40` }}>
+                          {rp.cover}
+                        </div>
                       )}
                     </div>
                     <div style={{ padding: "1rem" }}>

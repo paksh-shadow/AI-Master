@@ -191,7 +191,9 @@ export default function BlogPage() {
                       sizes="100vw"
                     />
                   ) : (
-                    post.cover
+                    <div style={{ fontSize: "2rem", color: cs.accent, textShadow: `0 0 20px ${cs.accent}40` }}>
+                      {post.cover}
+                    </div>
                   )}
                 </div>
                 <div style={{ padding: "1.4rem", flex: 1, display: "flex", flexDirection: "column" }}>
