@@ -1,6 +1,8 @@
 ---
 title: "o1 Prompting Guide: Reasoning Models Ke Naye Rules"
 category: "Deep Dive"
+
+<!-- Demo change: Velqor check karna -->
 date: "2026-11-27"
 readTime: "15 min"
 author: "Velqor City"
