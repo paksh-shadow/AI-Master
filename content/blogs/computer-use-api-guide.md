@@ -5,7 +5,7 @@ date: "2026-11-23"
 readTime: "10 min"
 author: "Velqor"
 excerpt: "AI ab tumhara mouse chala sakti hai. Maine Claude ka Computer Use API try kiya — form fill, scraping, testing. Sach bataya hai — kya kaam kiya, kya nahi. Code examples saath mein."
-cover: "computer-use-cover.png"
+cover: "🖥️"
 tags: ["Computer Use", "Claude", "AI Agents", "Browser Automation", "Anthropic API", "Tutorial"]
 ---
 
