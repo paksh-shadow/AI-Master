@@ -32,11 +32,11 @@ function formatContent(content) {
 }
 
 export default async function BlogPostPage({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   const post = getPostBySlug(slug);
 
   if (!post) {
-    return null;
+    return <div style={{ padding: "4rem", textAlign: "center", color: "#fff", background: "#05070f", minHeight: "100vh" }}>Post not found</div>;
   }
 
   const cs = catStyle[post.category] || { accent: "#f97316", bg: "rgba(249,115,22,0.1)" };
