@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site";
+import Image from "next/image";
 
 if (typeof document !== "undefined") {
   document.title = `${siteConfig.name} - AI Blog`;
